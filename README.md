@@ -7,7 +7,7 @@ Projekt_1DV449_Individuellt_arbete_1DV409
 
 > [Individuellt arbete - beskrivning](https://github.com/1dv409/kursmaterial/raw/master/Laborationsuppgifter/2-1-individuellt-arbete.pdf "VäderApplikation")
 
-> Kraven på projektet för Webbteknik II finns beksriven på följande länk:
+> Kraven på projektet för Webbteknik II finns beskriven på följande länk:
 
 > [Projektbeskrivning](https://coursepress.lnu.se/kurs/webbteknik-ii/projektbeskrivning "VäderApplikation")
 
