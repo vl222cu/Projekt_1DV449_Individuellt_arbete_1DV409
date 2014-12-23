@@ -1,0 +1,5 @@
+c:\users\vivi\Source\Repos\WeatherApplication\Weather.Domain\bin\Debug\Weather.Domain.dll
+c:\users\vivi\Source\Repos\WeatherApplication\Weather.Domain\bin\Debug\Weather.Domain.pdb
+c:\users\vivi\Source\Repos\WeatherApplication\Weather.Domain\obj\Debug\Weather.Domain.csprojResolveAssemblyReference.cache
+c:\users\vivi\Source\Repos\WeatherApplication\Weather.Domain\obj\Debug\Weather.Domain.dll
+c:\users\vivi\Source\Repos\WeatherApplication\Weather.Domain\obj\Debug\Weather.Domain.pdb
