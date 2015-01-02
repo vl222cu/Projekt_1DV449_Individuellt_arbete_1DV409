@@ -3,3 +3,15 @@ c:\users\vivi\Source\Repos\WeatherApplication\Weather.Domain\bin\Debug\Weather.D
 c:\users\vivi\Source\Repos\WeatherApplication\Weather.Domain\obj\Debug\Weather.Domain.csprojResolveAssemblyReference.cache
 c:\users\vivi\Source\Repos\WeatherApplication\Weather.Domain\obj\Debug\Weather.Domain.dll
 c:\users\vivi\Source\Repos\WeatherApplication\Weather.Domain\obj\Debug\Weather.Domain.pdb
+C:\Users\vivi\Source\Repos\Projekt_1DV449_Individuellt_arbete_1DV409\WeatherApplication\Weather.Domain\obj\Debug\Weather.Domain.csprojResolveAssemblyReference.cache
+C:\Users\vivi\Source\Repos\Projekt_1DV449_Individuellt_arbete_1DV409\WeatherApplication\Weather.Domain\obj\Debug\Weather.Domain.dll
+C:\Users\vivi\Source\Repos\Projekt_1DV449_Individuellt_arbete_1DV409\WeatherApplication\Weather.Domain\obj\Debug\Weather.Domain.pdb
+C:\Users\vivi\Source\Repos\Projekt_1DV449_Individuellt_arbete_1DV409\WeatherApplication\Weather.Domain\bin\Debug\Weather.Domain.dll.config
+C:\Users\vivi\Source\Repos\Projekt_1DV449_Individuellt_arbete_1DV409\WeatherApplication\Weather.Domain\bin\Debug\Weather.Domain.dll
+C:\Users\vivi\Source\Repos\Projekt_1DV449_Individuellt_arbete_1DV409\WeatherApplication\Weather.Domain\bin\Debug\Weather.Domain.pdb
+C:\Users\vivi\Source\Repos\Projekt_1DV449_Individuellt_arbete_1DV409\WeatherApplication\Weather.Domain\bin\Debug\EntityFramework.dll
+C:\Users\vivi\Source\Repos\Projekt_1DV449_Individuellt_arbete_1DV409\WeatherApplication\Weather.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\vivi\Source\Repos\Projekt_1DV449_Individuellt_arbete_1DV409\WeatherApplication\Weather.Domain\bin\Debug\Newtonsoft.Json.dll
+C:\Users\vivi\Source\Repos\Projekt_1DV449_Individuellt_arbete_1DV409\WeatherApplication\Weather.Domain\bin\Debug\EntityFramework.xml
+C:\Users\vivi\Source\Repos\Projekt_1DV449_Individuellt_arbete_1DV409\WeatherApplication\Weather.Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\vivi\Source\Repos\Projekt_1DV449_Individuellt_arbete_1DV409\WeatherApplication\Weather.Domain\bin\Debug\Newtonsoft.Json.xml

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WP13_vl222cu_Weather.Models.DataModels.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Forecast">
+    <Key>
+      <PropertyRef Name="ForecastId" />
+    </Key>
+    <Property Name="ForecastId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocationId" Type="int" Nullable="false" />
+    <Property Name="DateFrom" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="DateTo" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="SymbolNumber" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Temperature" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NextUpdate" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="GeonameId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CountryName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="GeoName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Forecast_Location">
+    <End Role="Location" Type="Self.Location" Multiplicity="1" />
+    <End Role="Forecast" Type="Self.Forecast" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="Forecast">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WP13_vl222cu_WeatherModelsDataModelsStoreContainer">
+    <EntitySet Name="Forecast" EntityType="Self.Forecast" Schema="appSchema" store:Type="Tables" />
+    <EntitySet Name="Location" EntityType="Self.Location" Schema="appSchema" store:Type="Tables" />
+    <AssociationSet Name="FK_Forecast_Location" Association="Self.FK_Forecast_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="Forecast" EntitySet="Forecast" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

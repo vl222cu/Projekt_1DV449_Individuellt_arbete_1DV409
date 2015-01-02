@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace Weather.Domain
 {
@@ -13,9 +14,12 @@ namespace Weather.Domain
             //Empty!
         }
 
-        public Forecast()
+        public Forecast(XmlNode node, Location location)
         {
-
+            SymbolNumber = SymbolNumber = node["symbol"].Attributes["number"].Value;
+            Temperature = node["temperature"].Attributes["value"].Value;
+            LocationId = location.LocationId;
+            Location = location;
         }
     }
 }
