@@ -76,12 +76,12 @@
     <Compile Include="Forecast.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IWeatherRepository.cs" />
+    <Compile Include="Repositories\WeatherRepository.cs" />
     <Compile Include="Webservices\IWeatherWebservice.cs" />
     <Compile Include="Webservices\WeatherWebservice.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EntityDeploy Include="DataModels\WeatherModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

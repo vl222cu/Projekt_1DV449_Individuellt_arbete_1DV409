@@ -11,13 +11,13 @@ namespace Weather.Domain.Repositories
         IEnumerable<Forecast> FindAllForecast();
         Forecast FindForecastById(int id);
         void AddForecast(Forecast forecast);
-        void DeleteForecast(Forecast forecast);
+        void RemoveForecast(int id);
 
         IEnumerable<Location> FindAllLocation();
         Location FindLocationById(int id);
         Location FindLocationByCityName(string cityName);
         void AddLocation(Location location);
-        void DeleteLocation(Location location);
+        void RemoveLocation(int id);
 
         void Save();
     }
