@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,8 +17,8 @@ namespace Weather.Domain
 
         public Forecast(XmlNode node, Location location)
         {
-            DateFrom = DateTime.Parse(node.Attributes["from"].Value).ToString("yyyy-MM-dd HH:MM");
-            DateTo = DateTime.Parse(node.Attributes["to"].Value).ToString("yyyy-MM-dd HH:MM");
+            DateFrom = DateTime.ParseExact((node.Attributes["from"].Value).ToString(),"yyyy-MM-dd HH:MM", CultureInfo.InvariantCulture);
+            DateTo = DateTime.ParseExact((node.Attributes["to"].Value).ToString(), "yyyy-MM-dd HH:MM", CultureInfo.InvariantCulture);
             SymbolNumber = SymbolNumber = node["symbol"].Attributes["number"].Value;
             Temperature = node["temperature"].Attributes["value"].Value;
             LocationId = location.LocationId;
