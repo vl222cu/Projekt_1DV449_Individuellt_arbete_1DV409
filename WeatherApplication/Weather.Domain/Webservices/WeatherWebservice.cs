@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Weather.Domain.Webservices
 {
@@ -34,7 +35,24 @@ namespace Weather.Domain.Webservices
 
         public IEnumerable<Forecast> GetLocationForcast(Location location)
         {
-            throw new NotImplementedException();
+            var requestUriString = String.Format("http://www.yr.no/place/Sweden/{0}/{1}/forecast.xml", location, location);
+            XDocument X = XDocument.Load(requestUriString);
+
+            var forecast = X.Element("weatherdata").Element("forecast");
+            var locationName = forecast.Descendants("location").Attributes("name").FirstOrDefault().Value;
+            var tempData = forecast.Element("tabular").Elements("time");
+
+            var data = tempData.Select(item =>
+                        new Forecast
+                        {
+                            DateFrom = Convert.ToDateTime(item.Attribute("from").Value),
+                            DateTo = Convert.ToDateTime(item.Attribute("to").Value),
+                            SymbolNumber = item.Element("symbol").Attribute("number").Value,
+                            Temperature = item.Element("temperature").Attribute("value").Value
+                        })
+                        .ToList();
+
+            return data;
         }
     }
 }
