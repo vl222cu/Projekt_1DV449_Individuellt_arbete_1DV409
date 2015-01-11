@@ -14,23 +14,28 @@ namespace Weather.Domain.Webservices
     {
         public Location LookupLocation(string cityName)
         {
-            var rawJson = string.Empty;
+           var rawJson = string.Empty;
 
-            #region JSON from api.geonames.org
+ //           #region JSON from api.geonames.org
 
-            var requestUriString = String.Format("http://api.geonames.org/searchJSON?q={0}&maxRows=10&username=vivlam", cityName);
-            var request = (HttpWebRequest)WebRequest.Create(requestUriString);
-            request.Method = "GET";
+           var requestUriString = String.Format("http://api.geonames.org/searchJSON?q={0}&maxRows=10&username=vl222cu", cityName);
+           var request = (HttpWebRequest)WebRequest.Create(Uri.EscapeDataString(requestUriString));
+           request.Method = "GET";
 
-            using (var response = request.GetResponse())
-            using (var reader = new StreamReader(response.GetResponseStream()))
-            {
+           using (var response = request.GetResponse())
+           using (var reader = new StreamReader(response.GetResponseStream()))
+           {
                 rawJson = reader.ReadToEnd();
             }
 
-            #endregion
+//           #endregion
 
-            return JArray.Parse(rawJson).Select(l => new Location(l)).SingleOrDefault();
+           //return JArray.Parse(rawJson).Select(l => new Location(l)).SingleOrDefault();
+           var obj = JObject.Parse(rawJson);
+           var city = obj.SelectToken("geonames[0]").Children<JProperty>().Select(l => new Location(l)).SingleOrDefault();
+
+           return city;
+
         }
 
         public IEnumerable<Forecast> GetLocationForcast(Location location)

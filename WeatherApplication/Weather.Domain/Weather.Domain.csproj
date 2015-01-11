@@ -74,10 +74,14 @@
       <DependentUpon>WeatherModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Forecast.cs" />
+    <Compile Include="IWeatherService.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IWeatherRepository.cs" />
     <Compile Include="Repositories\WeatherRepository.cs" />
+    <Compile Include="Repositories\WeatherRepositoryBase.cs" />
+    <Compile Include="WeatherService.cs" />
+    <Compile Include="WeatherServiceBase.cs" />
     <Compile Include="Webservices\IWeatherWebservice.cs" />
     <Compile Include="Webservices\WeatherWebservice.cs" />
   </ItemGroup>

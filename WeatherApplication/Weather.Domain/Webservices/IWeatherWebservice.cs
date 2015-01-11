@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Weather.Domain.Webservices
 {
-    interface IWeatherWebservice
+    public interface IWeatherWebservice
     {
         IEnumerable<Forecast> GetLocationForcast(Location location);
         Location LookupLocation(string locationName);

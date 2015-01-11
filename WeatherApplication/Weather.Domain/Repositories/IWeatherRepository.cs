@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Weather.Domain.Repositories
 {
-    interface IWeatherRepository : IDisposable
+    public interface IWeatherRepository : IDisposable
     {
         IEnumerable<Forecast> FindAllForecast();
         Forecast FindForecastById(int id);

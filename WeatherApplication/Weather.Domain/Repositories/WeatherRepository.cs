@@ -7,7 +7,7 @@ using Weather.Domain.DataModels;
 
 namespace Weather.Domain.Repositories
 {
-    class WeatherRepository : WeatherRepositoryBase
+    public class WeatherRepository : WeatherRepositoryBase
     {
         private WP13_vl222cu_WeatherEntities _context = new WP13_vl222cu_WeatherEntities();
 

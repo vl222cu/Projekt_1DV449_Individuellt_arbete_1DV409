@@ -42,10 +42,10 @@ namespace Weather.Domain.Repositories
             return QueryLocations().SingleOrDefault(l => l.GeoName == cityName);
         }
 
-        public void AddLocation(Location location);
-        public void RemoveLocation(int id);
+        public abstract void AddLocation(Location location);
+        public abstract void RemoveLocation(int id);
 
-        public void Save();
+        public abstract void Save();
 
         #region IDisposable Members
 

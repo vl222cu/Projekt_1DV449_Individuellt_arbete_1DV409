@@ -1,0 +1,11 @@
+﻿@model Weather.MVC.ViewModels.WeatherIndexViewModel
+
+@if (Model != null && Model.HasForecasts)
+{
+    <div id="tweets">
+        <h2>
+            The forecast for @Model.Name
+        </h2>
+        @Html.DisplayFor(m => m.Forecasts)
+    </div>
+}

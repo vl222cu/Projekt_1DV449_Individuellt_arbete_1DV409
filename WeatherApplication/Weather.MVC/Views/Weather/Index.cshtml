@@ -1,0 +1,12 @@
+﻿@model Weather.MVC.ViewModels.WeatherIndexViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>WeatherApplication</h2>
+
+@Html.Partial("~/Views/Weather/LocationForm.cshtml")
+
+@Html.Partial("~/Views/Weather/WeatherTable.cshtml")
+
