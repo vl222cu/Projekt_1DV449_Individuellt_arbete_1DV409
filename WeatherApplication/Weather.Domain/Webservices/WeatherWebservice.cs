@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,8 +19,8 @@ namespace Weather.Domain.Webservices
 
  //           #region JSON from api.geonames.org
 
-           var requestUriString = String.Format("http://api.geonames.org/searchJSON?q={0}&maxRows=10&username=vl222cu", cityName);
-           var request = (HttpWebRequest)WebRequest.Create(Uri.EscapeDataString(requestUriString));
+           var requestUriString = new Uri(String.Format("http://api.geonames.org/searchJSON?q={0}&maxRows=10&username=vl222cu", cityName));
+           var request = (HttpWebRequest)WebRequest.Create(requestUriString);
            request.Method = "GET";
 
            using (var response = request.GetResponse())
@@ -30,12 +31,10 @@ namespace Weather.Domain.Webservices
 
 //           #endregion
 
-           //return JArray.Parse(rawJson).Select(l => new Location(l)).SingleOrDefault();
            var obj = JObject.Parse(rawJson);
            var city = obj.SelectToken("geonames[0]").Children<JProperty>().Select(l => new Location(l)).SingleOrDefault();
 
            return city;
-
         }
 
         public IEnumerable<Forecast> GetLocationForcast(Location location)
