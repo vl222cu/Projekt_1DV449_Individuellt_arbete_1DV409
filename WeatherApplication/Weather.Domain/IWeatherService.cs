@@ -8,7 +8,7 @@ namespace Weather.Domain
 {
     public interface IWeatherService : IDisposable
     {
-        Location GetLocation(string cityName);
+        IEnumerable<Location> GetLocation(string cityName);
         void RefreshForecasts(Location location);
     }
 }

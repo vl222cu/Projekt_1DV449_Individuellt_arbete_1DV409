@@ -28,23 +28,26 @@ namespace Weather.Domain
             _webservice = webservice;
         }
 
-        public override Location GetLocation(string cityName)
+        public override IEnumerable<Location> GetLocation(string cityName)
         {
             // Försöker hämta location från databasen
-            var location = _repository.FindLocationByCityName(cityName);
+            var locations = _repository.FindLocationByCityName(cityName);
 
             // Om location saknas i databasen...
-            if (location == null)
+            if (locations == null)
             {
                 // ...hämtas location från webservicen och...
-                location = _webservice.LookupLocation(cityName);
+                locations = _webservice.LookupLocation(cityName);
 
                 // ...sparas i databasen 
-                _repository.AddLocation(location);
-                _repository.Save();
+                foreach (var location in locations) 
+                {
+                    _repository.AddLocation(location);
+                    _repository.Save();
+                }
             }
 
-            return location;
+            return locations;
         }
 
         public override void RefreshForecasts(Location location)

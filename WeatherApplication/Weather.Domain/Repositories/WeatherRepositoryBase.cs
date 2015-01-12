@@ -37,9 +37,9 @@ namespace Weather.Domain.Repositories
             return QueryLocations().SingleOrDefault(l => l.LocationId == id);
         }
 
-        public Location FindLocationByCityName(string cityName)
+        public IEnumerable<Location> FindLocationByCityName(string cityName)
         {
-            return QueryLocations().SingleOrDefault(l => l.GeoName == cityName);
+            return QueryLocations().Where(l => l.GeoName == cityName);
         }
 
         public abstract void AddLocation(Location location);

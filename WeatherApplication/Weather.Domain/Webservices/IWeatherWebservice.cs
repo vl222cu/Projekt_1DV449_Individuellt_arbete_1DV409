@@ -9,6 +9,6 @@ namespace Weather.Domain.Webservices
     public interface IWeatherWebservice
     {
         IEnumerable<Forecast> GetLocationForcast(Location location);
-        Location LookupLocation(string locationName);
+        IEnumerable<Location> LookupLocation(string locationName);
     }
 }

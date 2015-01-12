@@ -15,7 +15,7 @@ namespace Weather.Domain.Repositories
 
         IEnumerable<Location> FindAllLocation();
         Location FindLocationById(int id);
-        Location FindLocationByCityName(string cityName);
+        IEnumerable<Location> FindLocationByCityName(string cityName);
         void AddLocation(Location location);
         void RemoveLocation(int id);
 

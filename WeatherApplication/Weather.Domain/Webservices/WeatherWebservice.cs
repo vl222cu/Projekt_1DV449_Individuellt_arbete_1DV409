@@ -13,7 +13,7 @@ namespace Weather.Domain.Webservices
 {
     public class WeatherWebservice : IWeatherWebservice
     {
-        public Location LookupLocation(string cityName)
+        public IEnumerable<Location> LookupLocation(string cityName)
         {
            var rawJson = string.Empty;
 
@@ -31,10 +31,18 @@ namespace Weather.Domain.Webservices
 
 //           #endregion
 
+           var cityList = new List<Location>();
            var obj = JObject.Parse(rawJson);
-           var city = obj.SelectToken("geonames[0]").Children<JProperty>().Select(l => new Location(l)).SingleOrDefault();
+           
+           foreach (var child in obj["geonames"])
+           {
+               string id = (string)child["geonameId"];
+               string countryName = (string)child["countryName"];
+               string city = (string)child["name"];
 
-           return city;
+               cityList.Add(new Location(id, countryName, city));
+           }
+           return cityList;
         }
 
         public IEnumerable<Forecast> GetLocationForcast(Location location)

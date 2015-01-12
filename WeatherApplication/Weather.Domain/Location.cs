@@ -9,12 +9,12 @@ namespace Weather.Domain
 {
     public partial class Location
     {
-        public Location(JToken locationToken)
+        public Location(string id, string countryName, string cityName)
             : this()
         {
-           GeonameId = locationToken.Value<string>("geonameId");
-           CountryName = locationToken.Value<string>("countryName");
-           GeoName = locationToken.Value<string>("name");
+           GeonameId = id;
+           CountryName = countryName;
+           GeoName = cityName;
         }
     }
 }
