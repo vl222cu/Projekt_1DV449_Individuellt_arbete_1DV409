@@ -34,7 +34,7 @@ namespace Weather.Domain
             var locations = _repository.FindLocationByCityName(cityName);
 
             // Om location saknas i databasen...
-            if (locations == null)
+            if (locations == null || locations.Count() == 0)
             {
                 // ...hämtas location från webservicen och...
                 locations = _webservice.LookupLocation(cityName);

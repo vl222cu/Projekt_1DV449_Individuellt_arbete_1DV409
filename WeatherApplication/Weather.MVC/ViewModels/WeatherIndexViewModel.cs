@@ -23,7 +23,7 @@ namespace Weather.MVC.ViewModels
             get { return Location != null ? Location.Forecasts : null; } 
         }
 
-        public Location Location { get; set; }
+        public IEnumerable<Location> Location { get; set; }
 
         public string Name
         {

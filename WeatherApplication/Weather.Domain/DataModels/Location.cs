@@ -24,6 +24,7 @@ namespace Weather.Domain
         public string GeonameId { get; set; }
         public string CountryName { get; set; }
         public string GeoName { get; set; }
+        public string AdminName1 { get; set; }
     
         public virtual ICollection<Forecast> Forecasts { get; set; }
     }

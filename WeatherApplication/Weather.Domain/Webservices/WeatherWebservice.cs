@@ -47,11 +47,10 @@ namespace Weather.Domain.Webservices
 
         public IEnumerable<Forecast> GetLocationForcast(Location location)
         {
-            var requestUriString = String.Format("http://www.yr.no/place/Sweden/{0}/{1}/forecast.xml", location, location);
+            var requestUriString = String.Format("http://www.yr.no/place/{0}/{1}/{2}/forecast.xml", location.CountryName, location.AdminName1, location.GeoName);
             XDocument X = XDocument.Load(requestUriString);
 
             var forecast = X.Element("weatherdata").Element("forecast");
-            var locationName = forecast.Descendants("location").Attributes("name").FirstOrDefault().Value;
             var tempData = forecast.Element("tabular").Elements("time");
 
             var data = tempData.Select(item =>
@@ -62,6 +61,7 @@ namespace Weather.Domain.Webservices
                             SymbolNumber = item.Element("symbol").Attribute("number").Value,
                             Temperature = item.Element("temperature").Attribute("value").Value
                         })
+                        .Take(5)
                         .ToList();
 
             return data;

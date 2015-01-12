@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'c:\users\vivi\Source\Repos\WeatherApplication\Weather.Domain\DataModels\WeatherModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\vivi\Source\Repos\Projekt_1DV449_Individuellt_arbete_1DV409\WeatherApplication\Weather.Domain\DataModels\WeatherModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
