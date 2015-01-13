@@ -6,8 +6,6 @@
         <MappingFragment StoreEntitySet="Forecast">
           <ScalarProperty Name="ForecastId" ColumnName="ForecastId" />
           <ScalarProperty Name="LocationId" ColumnName="LocationId" />
-          <ScalarProperty Name="DateFrom" ColumnName="DateFrom" />
-          <ScalarProperty Name="DateTo" ColumnName="DateTo" />
           <ScalarProperty Name="SymbolNumber" ColumnName="SymbolNumber" />
           <ScalarProperty Name="Temperature" ColumnName="Temperature" />
         </MappingFragment>
@@ -20,6 +18,7 @@
           <ScalarProperty Name="NextUpdate" ColumnName="NextUpdate" />
           <ScalarProperty Name="GeonameId" ColumnName="GeonameId" />
           <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="AdminName1" ColumnName="AdminName1" />
           <ScalarProperty Name="GeoName" ColumnName="GeoName" />
         </MappingFragment>
       </EntityTypeMapping>

@@ -1,0 +1,26 @@
+﻿@model Weather.MVC.ViewModels.WeatherIndexViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Locations</h2>
+
+@Html.ActionLink("New Search", "Index")
+
+@if (Model == null && !Model.Locations.Any() && !String.IsNullOrWhiteSpace(Model.CityName))
+{
+    <h2>No locations found with name <strong>@Model.CityName</strong>.</h2>
+}
+else
+{
+    <div>
+        <h2>Locations found with name <strong>@Model.CityName</strong></h2>
+        <ul>
+            @foreach (var location in Model.Locations)
+            {
+                <li><a href="@Url.Content("~/Home/Weather/?country=")@location.CountryName&county=@location.AdminName1&city=@location.GeoName">@location.GeoName, @location.AdminName1, @location.CountryName</a></li>
+            }
+        </ul>
+    </div>
+}

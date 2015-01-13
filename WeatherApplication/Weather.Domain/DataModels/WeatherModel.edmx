@@ -4,24 +4,22 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="WP13_vl222cu_Weather.Models.DataModels.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="WP13_vl222cu_Weather.Models.DataModels.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Forecast">
           <Key>
             <PropertyRef Name="ForecastId" />
           </Key>
           <Property Name="ForecastId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="LocationId" Type="int" Nullable="false" />
-          <Property Name="DateFrom" Type="datetime2" Precision="0" Nullable="false" />
-          <Property Name="DateTo" Type="datetime2" Precision="0" Nullable="false" />
-          <Property Name="SymbolNumber" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="Temperature" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="SymbolNumber" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Temperature" Type="varchar" MaxLength="5" Nullable="false" />
         </EntityType>
         <EntityType Name="Location">
           <Key>
             <PropertyRef Name="LocationId" />
           </Key>
           <Property Name="LocationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NextUpdate" Type="datetime2" Precision="0" Nullable="false" />
+          <Property Name="NextUpdate" Type="datetime" Nullable="false" />
           <Property Name="GeonameId" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CountryName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="AdminName1" Type="varchar" MaxLength="50" Nullable="false" />
@@ -47,7 +45,8 @@
             <End Role="Forecast" EntitySet="Forecast" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="WP13_vl222cu_Weather.Models.DataModels" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -57,10 +56,8 @@
           </Key>
           <Property Name="ForecastId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="LocationId" Type="Int32" Nullable="false" />
-          <Property Name="DateFrom" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="DateTo" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="SymbolNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Temperature" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SymbolNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Temperature" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Location" Relationship="Self.FK_Forecast_Location" FromRole="Forecast" ToRole="Location" />
         </EntityType>
         <EntityType Name="Location">
@@ -68,12 +65,12 @@
             <PropertyRef Name="LocationId" />
           </Key>
           <Property Name="LocationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NextUpdate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NextUpdate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="GeonameId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CountryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AdminName1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="GeoName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Forecasts" Relationship="Self.FK_Forecast_Location" FromRole="Location" ToRole="Forecast" />
-          <Property Name="AdminName1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_Forecast_Location">
           <End Role="Location" Type="Self.Location" Multiplicity="1" />
@@ -106,8 +103,6 @@
               <MappingFragment StoreEntitySet="Forecast">
                 <ScalarProperty Name="ForecastId" ColumnName="ForecastId" />
                 <ScalarProperty Name="LocationId" ColumnName="LocationId" />
-                <ScalarProperty Name="DateFrom" ColumnName="DateFrom" />
-                <ScalarProperty Name="DateTo" ColumnName="DateTo" />
                 <ScalarProperty Name="SymbolNumber" ColumnName="SymbolNumber" />
                 <ScalarProperty Name="Temperature" ColumnName="Temperature" />
               </MappingFragment>
@@ -116,11 +111,11 @@
           <EntitySetMapping Name="Locations">
             <EntityTypeMapping TypeName="WP13_vl222cu_Weather.Models.DataModels.Location">
               <MappingFragment StoreEntitySet="Location">
-                <ScalarProperty Name="AdminName1" ColumnName="AdminName1" />
                 <ScalarProperty Name="LocationId" ColumnName="LocationId" />
                 <ScalarProperty Name="NextUpdate" ColumnName="NextUpdate" />
                 <ScalarProperty Name="GeonameId" ColumnName="GeonameId" />
                 <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="AdminName1" ColumnName="AdminName1" />
                 <ScalarProperty Name="GeoName" ColumnName="GeoName" />
               </MappingFragment>
             </EntityTypeMapping>

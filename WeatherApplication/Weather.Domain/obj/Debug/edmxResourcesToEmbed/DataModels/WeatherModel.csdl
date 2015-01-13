@@ -6,10 +6,8 @@
     </Key>
     <Property Name="ForecastId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="LocationId" Type="Int32" Nullable="false" />
-    <Property Name="DateFrom" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="DateTo" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="SymbolNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Temperature" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SymbolNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Temperature" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Location" Relationship="Self.FK_Forecast_Location" FromRole="Forecast" ToRole="Location" />
   </EntityType>
   <EntityType Name="Location">
@@ -17,9 +15,10 @@
       <PropertyRef Name="LocationId" />
     </Key>
     <Property Name="LocationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NextUpdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="NextUpdate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="GeonameId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="CountryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AdminName1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="GeoName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Forecasts" Relationship="Self.FK_Forecast_Location" FromRole="Location" ToRole="Forecast" />
   </EntityType>

@@ -87,13 +87,15 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <EntityDeploy Include="DataModels\WeatherModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>WeatherModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
     <None Include="DataModels\WeatherModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>WeatherModel.edmx</DependentUpon>

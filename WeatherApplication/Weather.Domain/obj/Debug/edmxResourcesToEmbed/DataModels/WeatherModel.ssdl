@@ -6,19 +6,18 @@
     </Key>
     <Property Name="ForecastId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="LocationId" Type="int" Nullable="false" />
-    <Property Name="DateFrom" Type="datetime2" Precision="0" Nullable="false" />
-    <Property Name="DateTo" Type="datetime2" Precision="0" Nullable="false" />
-    <Property Name="SymbolNumber" Type="varchar" MaxLength="20" Nullable="false" />
-    <Property Name="Temperature" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SymbolNumber" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Temperature" Type="varchar" MaxLength="5" Nullable="false" />
   </EntityType>
   <EntityType Name="Location">
     <Key>
       <PropertyRef Name="LocationId" />
     </Key>
     <Property Name="LocationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="NextUpdate" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="NextUpdate" Type="datetime" Nullable="false" />
     <Property Name="GeonameId" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="CountryName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AdminName1" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="GeoName" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <Association Name="FK_Forecast_Location">

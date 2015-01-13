@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -15,11 +16,14 @@ namespace Weather.Domain
             //Empty!
         }
 
+        public string SymbolUrl
+        {
+            get { return String.Format("http://api.yr.no/weatherapi/weathericon/1.0/?symbol={0};content_type=image/png", SymbolNumber); }
+        }
+
         public Forecast(XmlNode node, Location location)
         {
-            DateFrom = DateTime.ParseExact((node.Attributes["from"].Value).ToString(),"yyyy-MM-dd HH:MM", CultureInfo.InvariantCulture);
-            DateTo = DateTime.ParseExact((node.Attributes["to"].Value).ToString(), "yyyy-MM-dd HH:MM", CultureInfo.InvariantCulture);
-            SymbolNumber = SymbolNumber = node["symbol"].Attributes["number"].Value;
+            SymbolNumber = node["symbol"].Attributes["number"].Value;
             Temperature = node["temperature"].Attributes["value"].Value;
             LocationId = location.LocationId;
             Location = location;

@@ -32,7 +32,7 @@ namespace Weather.MVC.Controllers
 
         #endregion
 
-        #region Index
+        #region ActionResults
 
         // GET: /Weather/
         public ActionResult Index()
@@ -49,8 +49,15 @@ namespace Weather.MVC.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    model.Location = _service.GetLocation(model.CityName);
-                    _service.RefreshForecasts(model.Location);
+                    model.Locations = _service.GetLocation(model.CityName);
+
+                    if (model.Locations.Count() > 1)
+                    {
+                        return View("LocationList", model);
+                    }
+
+                    return RedirectToAction("Forecast", model);
+//                    _service.RefreshForecasts(model.Locations);
                 }
             }
             catch (Exception ex)
@@ -64,6 +71,26 @@ namespace Weather.MVC.Controllers
             }
 
             return View(model);
+        }
+
+        public ActionResult Forecast(Location location, WeatherIndexViewModel model)
+        {
+            try
+            {
+                _service.RefreshForecasts(location);
+                return View("WeatherTable", model);
+            }
+            catch (Exception ex)
+            {
+                while (ex.InnerException != null)
+                {
+                    ex = ex.InnerException;
+                }
+
+                ModelState.AddModelError(String.Empty, ex.Message);
+            }
+
+            return View();
         }
 
         #endregion

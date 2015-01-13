@@ -16,8 +16,6 @@ namespace Weather.Domain
     {
         public int ForecastId { get; set; }
         public int LocationId { get; set; }
-        public System.DateTime DateFrom { get; set; }
-        public System.DateTime DateTo { get; set; }
         public string SymbolNumber { get; set; }
         public string Temperature { get; set; }
     

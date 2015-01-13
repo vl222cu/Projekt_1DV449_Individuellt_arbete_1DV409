@@ -27,7 +27,7 @@ namespace Weather.Domain.Webservices
            using (var reader = new StreamReader(response.GetResponseStream()))
            {
                 rawJson = reader.ReadToEnd();
-            }
+           }
 
 //           #endregion
 
@@ -38,9 +38,10 @@ namespace Weather.Domain.Webservices
            {
                string id = (string)child["geonameId"];
                string countryName = (string)child["countryName"];
+               string countyName = (string)child["adminName1"];
                string city = (string)child["name"];
 
-               cityList.Add(new Location(id, countryName, city));
+               cityList.Add(new Location(id, countryName, countyName, city));
            }
            return cityList;
         }
@@ -48,20 +49,20 @@ namespace Weather.Domain.Webservices
         public IEnumerable<Forecast> GetLocationForcast(Location location)
         {
             var requestUriString = String.Format("http://www.yr.no/place/{0}/{1}/{2}/forecast.xml", location.CountryName, location.AdminName1, location.GeoName);
-            XDocument X = XDocument.Load(requestUriString);
+            XDocument xDoc = XDocument.Load(requestUriString);
 
-            var forecast = X.Element("weatherdata").Element("forecast");
-            var tempData = forecast.Element("tabular").Elements("time");
+//            var forecast = X.Element("weatherdata").Element("forecast");
+  //          var tempData = forecast.Element("tabular").Elements("time");
 
-            var data = tempData.Select(item =>
+            var data = (from time in xDoc.Descendants("time")
+                       where Int32.Parse(time.Attribute("period").Value) >= 2
+                       group time by DateTime.Parse(time.Attribute("to").Value).Date into g
+                       select(from t in g select t).First()).Take(5).Select(item =>
                         new Forecast
                         {
-                            DateFrom = Convert.ToDateTime(item.Attribute("from").Value),
-                            DateTo = Convert.ToDateTime(item.Attribute("to").Value),
                             SymbolNumber = item.Element("symbol").Attribute("number").Value,
                             Temperature = item.Element("temperature").Attribute("value").Value
                         })
-                        .Take(5)
                         .ToList();
 
             return data;

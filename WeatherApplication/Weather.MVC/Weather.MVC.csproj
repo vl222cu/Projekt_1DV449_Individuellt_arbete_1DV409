@@ -116,6 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="Views\Shared\DisplayTemplates\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -132,6 +133,37 @@
     <Content Include="App_Data\Weather.xml" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\icons\01d.png" />
+    <Content Include="Content\icons\01n.png" />
+    <Content Include="Content\icons\02d.png" />
+    <Content Include="Content\icons\02n.png" />
+    <Content Include="Content\icons\03d.png" />
+    <Content Include="Content\icons\03n.png" />
+    <Content Include="Content\icons\04.png" />
+    <Content Include="Content\icons\05d.png" />
+    <Content Include="Content\icons\05n.png" />
+    <Content Include="Content\icons\06d.png" />
+    <Content Include="Content\icons\06n.png" />
+    <Content Include="Content\icons\07d.png" />
+    <Content Include="Content\icons\07n.png" />
+    <Content Include="Content\icons\08d.png" />
+    <Content Include="Content\icons\08n.png" />
+    <Content Include="Content\icons\09.png" />
+    <Content Include="Content\icons\10.png" />
+    <Content Include="Content\icons\11.png" />
+    <Content Include="Content\icons\13.png" />
+    <Content Include="Content\icons\14.png" />
+    <Content Include="Content\icons\15.png" />
+    <Content Include="Content\icons\1m.png" />
+    <Content Include="Content\icons\17.png" />
+    <Content Include="Content\icons\18.png" />
+    <Content Include="Content\icons\19.png" />
+    <Content Include="Content\icons\20d.png" />
+    <Content Include="Content\icons\20m.png" />
+    <Content Include="Content\icons\21d.png" />
+    <Content Include="Content\icons\21m.png" />
+    <Content Include="Content\icons\22.png" />
+    <Content Include="Content\icons\23.png" />
     <Content Include="Views\Shared\favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -145,7 +177,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -163,7 +197,8 @@
     <Content Include="Views\Weather\LocationForm.cshtml" />
     <Content Include="Views\Weather\Index.cshtml" />
     <Content Include="Views\Weather\WeatherTable.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\Weather.cshtml" />
+    <Content Include="ViewModels\Weather.cshtml" />
+    <Content Include="Views\Weather\LocationList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Weather.Domain\Weather.Domain.csproj">

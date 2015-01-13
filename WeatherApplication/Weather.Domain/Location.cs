@@ -9,11 +9,12 @@ namespace Weather.Domain
 {
     public partial class Location
     {
-        public Location(string id, string countryName, string cityName)
+        public Location(string id, string countryName, string countyName, string cityName)
             : this()
         {
            GeonameId = id;
            CountryName = countryName;
+           AdminName1 = countyName;
            GeoName = cityName;
         }
     }
