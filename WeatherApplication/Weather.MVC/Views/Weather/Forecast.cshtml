@@ -2,17 +2,74 @@
 
 @{
     ViewBag.Title = "Forecast";
+    int dayNo = ViewBag.dayNow;
+    string nameOfDay = "";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<p>
+    @Html.ActionLink("New Search", "Index")
+</p>
 
 @if (Model != null && Model.HasForecasts)
 {
-    <div>
-        <h2>
-            The forecast for @Model.Name
-        </h2>
-        @Html.DisplayFor(m => m.Forecasts)
-    </div>
+   <h2> Weather Forecast for @Model.Name </h2>
+
+    foreach (var forecast in Model.Forecasts)
+    {
+        if (dayNo == 1)
+        {
+            nameOfDay = "Monday";
+        }
+        else if (dayNo == 2)
+        {
+            nameOfDay = "Tuesday";
+        }
+        else if (dayNo == 3)
+        {
+            nameOfDay = "Wednesday";
+        }
+        else if (dayNo == 4)
+        {
+            nameOfDay = "Thursday";
+        }
+        else if (dayNo == 5)
+        {
+            nameOfDay = "Friday";
+        }
+        else if (dayNo == 6)
+        {
+            nameOfDay = "Saturday";
+        }
+        else if (dayNo == 7)
+        {
+            nameOfDay = "Sunday";
+        }
+
+        if (dayNo == ViewBag.dayNow)
+        {
+            nameOfDay = "Today";
+        }
+        if (dayNo == ViewBag.dayNow + 1)
+        {
+            nameOfDay = "Tomorrow";
+        }
+
+        if (dayNo == 7)
+        {
+            dayNo = 1;
+        }
+        else
+        {
+            dayNo++;
+        }
+     <div>
+        <p><strong>@nameOfDay</strong></p>
+        <div>
+            <img src="@forecast.SymbolUrl" />
+        </div>
+        <div>@forecast.Temperature °C</div>
+        </div>
+    }
 }
 else
 {

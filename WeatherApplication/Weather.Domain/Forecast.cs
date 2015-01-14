@@ -18,7 +18,7 @@ namespace Weather.Domain
 
         public string SymbolUrl
         {
-            get { return String.Format("http://api.yr.no/weatherapi/weathericon/1.0/?symbol={0};content_type=image/png", SymbolNumber); }
+            get { return String.Format("http://api.yr.no/weatherapi/weathericon/1.1/?symbol={0};content_type=image/png", SymbolNumber); }
         }
 
 /*       public Forecast(XmlNode node, Location location)

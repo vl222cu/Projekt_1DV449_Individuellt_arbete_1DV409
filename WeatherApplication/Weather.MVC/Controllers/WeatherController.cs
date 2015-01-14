@@ -72,13 +72,13 @@ namespace Weather.MVC.Controllers
             return View("Index", model);
         }
 
-        public ActionResult Forecast(Location location)
+        public ActionResult Forecast(Location location, WeatherIndexViewModel model)
         {
-            var model = new WeatherIndexViewModel();
-
             try
             {
-                _service.RefreshForecasts(location);
+                ViewBag.dayNow = (int)System.DateTime.Now.DayOfWeek;
+                model.Location = location;
+                model.Forecasts = _service.GetForecast(location);
                 return View("Forecast", model);
             }
             catch (Exception ex)

@@ -15,7 +15,7 @@
       <PropertyRef Name="LocationId" />
     </Key>
     <Property Name="LocationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NextUpdate" Type="DateTime" Precision="3" />
+    <Property Name="NextUpdate" Type="DateTime" Precision="0" Nullable="false" />
     <Property Name="GeonameId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="CountryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="AdminName1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />

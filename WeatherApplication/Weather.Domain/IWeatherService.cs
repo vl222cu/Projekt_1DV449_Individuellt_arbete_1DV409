@@ -9,6 +9,6 @@ namespace Weather.Domain
     public interface IWeatherService : IDisposable
     {
         IEnumerable<Location> GetLocation(string cityName);
-        void RefreshForecasts(Location location);
+        IEnumerable<Forecast> GetForecast(Location location);
     }
 }

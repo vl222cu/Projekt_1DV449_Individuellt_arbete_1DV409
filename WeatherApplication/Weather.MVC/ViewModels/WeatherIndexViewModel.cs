@@ -20,10 +20,7 @@ namespace Weather.MVC.ViewModels
             get { return Forecasts != null && Forecasts.Any(); }
         }
 
-        public IEnumerable<Forecast> Forecasts
-        {
-            get { return Location != null ? Location.Forecasts : null; }
-        }
+        public IEnumerable<Forecast> Forecasts { get; set; }
 
         public Location Location { get; set; }
 
@@ -31,7 +28,7 @@ namespace Weather.MVC.ViewModels
 
         public string Name
         {
-            get { return Location != null ? Location.GeoName : "[Unknown]"; }
+            get { return Location != null ? Location.GeoName: "[Unknown]"; }
         }
     }
 }

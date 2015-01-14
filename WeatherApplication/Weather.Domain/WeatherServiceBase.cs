@@ -9,7 +9,7 @@ namespace Weather.Domain
     public abstract class WeatherServiceBase : IWeatherService
     {
         public abstract IEnumerable<Location> GetLocation(string cityName);
-        public abstract void RefreshForecasts(Location location);
+        public abstract IEnumerable<Forecast> GetForecast(Location location);
 
         #region IDisposable Members
 
