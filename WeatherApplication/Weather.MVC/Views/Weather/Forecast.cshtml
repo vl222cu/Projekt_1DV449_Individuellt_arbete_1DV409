@@ -6,9 +6,9 @@
     string nameOfDay = "";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<p>
+<div class="search">
     @Html.ActionLink("New Search", "Index")
-</p>
+</div>
 
 @if (Model != null && Model.HasForecasts)
 {
@@ -62,18 +62,19 @@
         {
             dayNo++;
         }
-     <div>
-        <p><strong>@nameOfDay</strong></p>
-        <div>
-            <img src="@forecast.SymbolUrl" />
-        </div>
-        <div>@forecast.Temperature °C</div>
+        
+        <div class="forecastwrapper">
+            <p><strong>@nameOfDay</strong></p>
+            <div class="imgwrapper">
+                <img src="@forecast.SymbolUrl" />
+            </div>
+            <div class="temp">@forecast.Temperature °C</div>
         </div>
     }
 }
 else
 {
     <h2>
-        No forecast was found for @Model.Name.
+        No forecast was found.
     </h2>
 }

@@ -18,7 +18,7 @@ namespace Weather.Domain.Webservices
         {
            var rawJson = string.Empty;
 
-            #region JSON from api.geonames.org
+            #region JSON från api.geonames.org
 
            var requestUriString = new Uri(String.Format("http://api.geonames.org/searchJSON?q={0}&maxRows=10&username=vl222cu", cityName));
            var request = (HttpWebRequest)WebRequest.Create(requestUriString);
@@ -48,11 +48,12 @@ namespace Weather.Domain.Webservices
            return cityList;
         }
 
+        // Forecast
         public IEnumerable<Forecast> GetLocationForcast(Location location)
         {
             XDocument xDoc;
 
-            #region XML from api.yr.no
+            #region XML från api.yr.no
 
             var requestUriString = String.Format("http://www.yr.no/place/{0}/{1}/{2}/forecast.xml", location.CountryName, location.AdminName1, location.GeoName);
 

@@ -17,7 +17,7 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
+
         <footer>
             <p>&copy; @DateTime.Now.Year - WeatherApplication</p>
         </footer>
@@ -25,6 +25,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryval")
     @RenderSection("scripts", required: false)
 </body>
 </html>

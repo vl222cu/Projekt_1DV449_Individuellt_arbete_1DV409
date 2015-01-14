@@ -6,7 +6,9 @@
 
 <h2>Locations</h2>
 
-@Html.ActionLink("New Search", "Index")
+<div class="search">
+    @Html.ActionLink("New Search", "Index")
+</div>
 
 @if (Model == null && !Model.Locations.Any() && !String.IsNullOrWhiteSpace(Model.CityName))
 {
@@ -15,7 +17,7 @@
 else
 {
     <div>
-        <h2>Locations found with name <strong>@Model.CityName</strong></h2>
+        <h3>Locations found with name <strong>@Model.CityName</strong></h3>
         <ul>
             @foreach (var location in Model.Locations)
             {

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WP13_vl222cu_WeatherModelsDataModelsStoreContainer" CdmEntityContainer="WP13_vl222cu_WeatherEntities">
+    <EntitySetMapping Name="Forecasts">
+      <EntityTypeMapping TypeName="WP13_vl222cu_Weather.Models.DataModels.Forecast">
+        <MappingFragment StoreEntitySet="Forecast">
+          <ScalarProperty Name="ForecastId" ColumnName="ForecastId" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="SymbolNumber" ColumnName="SymbolNumber" />
+          <ScalarProperty Name="Temperature" ColumnName="Temperature" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="WP13_vl222cu_Weather.Models.DataModels.Location">
+        <MappingFragment StoreEntitySet="Location">
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="NextUpdate" ColumnName="NextUpdate" />
+          <ScalarProperty Name="GeonameId" ColumnName="GeonameId" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="AdminName1" ColumnName="AdminName1" />
+          <ScalarProperty Name="GeoName" ColumnName="GeoName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
