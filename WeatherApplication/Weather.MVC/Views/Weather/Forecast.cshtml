@@ -1,0 +1,22 @@
+﻿@model Weather.MVC.ViewModels.WeatherIndexViewModel
+
+@{
+    ViewBag.Title = "Forecast";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model != null && Model.HasForecasts)
+{
+    <div>
+        <h2>
+            The forecast for @Model.Name
+        </h2>
+        @Html.DisplayFor(m => m.Forecasts)
+    </div>
+}
+else
+{
+    <h2>
+        No forecast was found for @Model.Name.
+    </h2>
+}

@@ -19,8 +19,8 @@ else
         <ul>
             @foreach (var location in Model.Locations)
             {
-                <li><a href="@Url.Content("~/Home/Weather/?country=")@location.CountryName&county=@location.AdminName1&city=@location.GeoName">@location.GeoName, @location.AdminName1, @location.CountryName</a></li>
+                <li><a href="@Url.Action("Forecast", "Weather", new { CountryName = location.CountryName, AdminName1 = location.AdminName1, GeoName = location.GeoName, GeonameId = location.GeonameId, LocationId = location.LocationId })">@location.GeoName, @location.AdminName1, @location.CountryName</a></li>
             }
         </ul>
-    </div>
+    </div>  
 }

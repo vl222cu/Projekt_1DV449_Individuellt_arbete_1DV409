@@ -30,6 +30,7 @@ namespace Weather.Domain
 
         public override IEnumerable<Location> GetLocation(string cityName)
         {
+            var nextUpdate = DateTime.Now.AddHours(7);
             // Försöker hämta location från databasen
             var locations = _repository.FindLocationByCityName(cityName);
 
@@ -42,6 +43,7 @@ namespace Weather.Domain
                 // ...sparas i databasen 
                 foreach (var location in locations) 
                 {
+                    location.NextUpdate = nextUpdate;
                     _repository.AddLocation(location);
                     _repository.Save();
                 }
@@ -53,9 +55,8 @@ namespace Weather.Domain
         public override void RefreshForecasts(Location location)
         {
             // Om forecast saknas eller om det är dags för uppdatering...
-            if (!location.Forecasts.Any() || location.Forecasts == null || location.NextUpdate < DateTime.Now)
+            if (location.Forecasts.Count() == 0 || location.Forecasts.Any() || location.NextUpdate < DateTime.Now)
             {
-                // ...raderas gamla forecast ifall det finns några...
                 foreach (var forecast in location.Forecasts.ToList())
                 {
                     _repository.RemoveForecast(forecast.ForecastId);

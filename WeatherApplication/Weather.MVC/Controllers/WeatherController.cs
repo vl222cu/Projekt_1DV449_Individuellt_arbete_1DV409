@@ -57,7 +57,6 @@ namespace Weather.MVC.Controllers
                     }
 
                     return RedirectToAction("Forecast", model);
-//                    _service.RefreshForecasts(model.Locations);
                 }
             }
             catch (Exception ex)
@@ -70,15 +69,17 @@ namespace Weather.MVC.Controllers
                 ModelState.AddModelError(String.Empty, ex.Message);
             }
 
-            return View(model);
+            return View("Index", model);
         }
 
-        public ActionResult Forecast(Location location, WeatherIndexViewModel model)
+        public ActionResult Forecast(Location location)
         {
+            var model = new WeatherIndexViewModel();
+
             try
             {
                 _service.RefreshForecasts(location);
-                return View("WeatherTable", model);
+                return View("Forecast", model);
             }
             catch (Exception ex)
             {

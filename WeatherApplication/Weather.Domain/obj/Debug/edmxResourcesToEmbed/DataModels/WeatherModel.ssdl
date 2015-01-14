@@ -14,7 +14,7 @@
       <PropertyRef Name="LocationId" />
     </Key>
     <Property Name="LocationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="NextUpdate" Type="datetime" Nullable="false" />
+    <Property Name="NextUpdate" Type="datetime" />
     <Property Name="GeonameId" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="CountryName" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="AdminName1" Type="varchar" MaxLength="50" Nullable="false" />

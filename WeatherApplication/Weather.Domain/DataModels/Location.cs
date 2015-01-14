@@ -20,7 +20,7 @@ namespace Weather.Domain
         }
     
         public int LocationId { get; set; }
-        public System.DateTime NextUpdate { get; set; }
+        public Nullable<System.DateTime> NextUpdate { get; set; }
         public string GeonameId { get; set; }
         public string CountryName { get; set; }
         public string AdminName1 { get; set; }

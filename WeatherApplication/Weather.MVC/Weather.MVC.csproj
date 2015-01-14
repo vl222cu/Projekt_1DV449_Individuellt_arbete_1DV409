@@ -116,7 +116,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="Views\Shared\DisplayTemplates\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -196,9 +195,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Weather\LocationForm.cshtml" />
     <Content Include="Views\Weather\Index.cshtml" />
-    <Content Include="Views\Weather\WeatherTable.cshtml" />
+    <Content Include="Views\Weather\Forecast.cshtml" />
     <Content Include="ViewModels\Weather.cshtml" />
     <Content Include="Views\Weather\LocationList.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Weather.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Weather.Domain\Weather.Domain.csproj">

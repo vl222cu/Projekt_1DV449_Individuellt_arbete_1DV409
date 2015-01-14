@@ -21,12 +21,12 @@ namespace Weather.Domain
             get { return String.Format("http://api.yr.no/weatherapi/weathericon/1.0/?symbol={0};content_type=image/png", SymbolNumber); }
         }
 
-        public Forecast(XmlNode node, Location location)
+/*       public Forecast(XmlNode node, Location location)
         {
             SymbolNumber = node["symbol"].Attributes["number"].Value;
             Temperature = node["temperature"].Attributes["value"].Value;
             LocationId = location.LocationId;
             Location = location;
-        }
+        } */
     }
 }
