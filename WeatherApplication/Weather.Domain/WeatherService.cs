@@ -30,7 +30,6 @@ namespace Weather.Domain
 
         public override IEnumerable<Location> GetLocation(string cityName)
         {
-            //var nextUpdate = DateTime.Now.AddHours(7);
             // Försöker hämta location från databasen
             var locations = _repository.FindLocationByCityName(cityName);
 
@@ -43,7 +42,6 @@ namespace Weather.Domain
                 // ...sparas i databasen 
                 foreach (var location in locations) 
                 {
-                //    location.NextUpdate = nextUpdate;
                     _repository.AddLocation(location);
                     _repository.Save();
                 }

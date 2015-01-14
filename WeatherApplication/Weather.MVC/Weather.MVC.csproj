@@ -169,7 +169,7 @@
     <Content Include="Views\Weather\Index.cshtml" />
     <Content Include="Views\Weather\Forecast.cshtml" />
     <Content Include="ViewModels\Weather.cshtml" />
-    <Content Include="Views\LocationList.cshtml" />
+    <Content Include="Views\Weather\LocationList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Weather.Domain\Weather.Domain.csproj">

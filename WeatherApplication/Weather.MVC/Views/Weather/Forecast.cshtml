@@ -13,7 +13,7 @@
 @if (Model != null && Model.HasForecasts)
 {
    <h2> Weather Forecast for @Model.Name </h2>
-   <p><small>Weather forecast and weather icons are delivered by yr.no</small></p>
+
     foreach (var forecast in Model.Forecasts)
     {
         if (dayNo == 1)
