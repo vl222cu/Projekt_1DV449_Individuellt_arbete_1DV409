@@ -72,6 +72,7 @@ namespace Weather.MVC.Controllers
             return View("Index", model);
         }
 
+        // Actionmetod som visar den valda platsens väder
         public ActionResult Forecast(Location location, WeatherIndexViewModel model)
         {
             try

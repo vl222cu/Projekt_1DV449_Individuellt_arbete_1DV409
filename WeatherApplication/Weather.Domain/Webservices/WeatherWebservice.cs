@@ -13,7 +13,7 @@ namespace Weather.Domain.Webservices
 {
     public class WeatherWebservice : IWeatherWebservice
     {
-        // Location
+        // Hämtning av data för plats via geonames API
         public IEnumerable<Location> LookupLocation(string cityName)
         {
            var rawJson = string.Empty;
@@ -48,7 +48,7 @@ namespace Weather.Domain.Webservices
            return cityList;
         }
 
-        // Forecast
+        // Hämtning av data för vädret på vald plats via yr.no API
         public IEnumerable<Forecast> GetLocationForcast(Location location)
         {
             XDocument xDoc;
@@ -69,9 +69,9 @@ namespace Weather.Domain.Webservices
             #endregion
 
             var data = (from time in xDoc.Descendants("time")
-                        where Int32.Parse(time.Attribute("period").Value) >= 2
-                        group time by DateTime.Parse(time.Attribute("to").Value).Date into g
-                        select (from t in g select t).First()).Take(5).Select(item =>
+                        where Int32.Parse(time.Attribute("period").Value) >= 2 // Periodens värde väljs ut
+                        group time by DateTime.Parse(time.Attribute("to").Value).Date into g // Perioderna grupperas... 
+                        select (from t in g select t).First()).Take(5).Select(item => // ...och första väljs sedan ut i varje par
                         new Forecast
                         {
                             SymbolNumber = item.Element("symbol").Attribute("number").Value,
