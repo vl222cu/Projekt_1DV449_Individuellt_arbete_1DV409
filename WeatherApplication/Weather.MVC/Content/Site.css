@@ -75,3 +75,64 @@ footer
     padding-top: 20px;
 }
 
+#detectionSpan
+{
+    margin: 20px;
+}
+
+#tabsection 
+    {
+        height: 55px;
+    }	
+	.ptab 
+	{
+	    display: inline-block;
+	    border: 1px solid #ccc;
+	    margin: 15px 0 0 25px;
+	    padding: 5px 10px;
+	    border-radius: 5px;
+	    cursor:pointer;
+	    color: #999;
+	}	
+	    .ptab:hover 
+	    {
+	        background-color: #eee;
+	    }
+.oldSearchesBox 
+	{
+	    border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        margin: 30px 0 0 0;
+	}
+	    .oldSearchesBox h4 
+	    {
+	        margin-top: 0;
+	    }
+	    .listOfSearchesUL 
+	    {
+	        list-style: none;
+	        width: 200px;
+	        /*border: 1px solid #f00;*/
+	    }
+	        .listOfSearchesUL li 
+	        {
+	            text-transform: capitalize;
+	            padding: 5px 10px;
+	            width: 100%;
+	            /*border: 1px solid #f00;*/
+	        }
+	            .listOfSearchesUL li a 
+	            {
+	                text-decoration: none;
+	                color: #444;
+	                width: 100%;
+	            }
+	                .listOfSearchesUL li a:before {
+		                content: "\00BB" "\0020";
+		                color: #444;
+		            }
+	                .listOfSearchesUL li a:hover 
+	                {
+	                    color: #f24ca2;
+	                }

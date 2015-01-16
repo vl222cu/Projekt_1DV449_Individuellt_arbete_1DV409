@@ -20,7 +20,7 @@ namespace Weather.Domain.Webservices
 
             #region JSON från api.geonames.org
 
-           var requestUriString = new Uri(String.Format("http://api.geonames.org/searchJSON?q={0}&maxRows=10&username=vl222cu", cityName));
+           var requestUriString = new Uri(String.Format("http://api.geonames.org/searchJSON?name={0}&username=vl222cu&featureClass=P", cityName));
            var request = (HttpWebRequest)WebRequest.Create(requestUriString);
            request.Method = "GET";
 

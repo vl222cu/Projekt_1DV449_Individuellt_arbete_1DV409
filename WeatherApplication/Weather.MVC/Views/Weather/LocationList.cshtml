@@ -16,12 +16,12 @@
 }
 else
 {
-    <div>
+    <div class="localStorageDiv">
         <h3>Locations found with name <strong>@Model.CityName</strong></h3>
         <ul>
             @foreach (var location in Model.Locations)
             {
-                <li><a href="@Url.Action("Forecast", "Weather", new { CountryName = location.CountryName, AdminName1 = location.AdminName1, GeoName = location.GeoName, GeonameId = location.GeonameId, LocationId = location.LocationId })">@location.GeoName, @location.AdminName1, @location.CountryName</a></li>
+                <li class="city"><a href="@Url.Action("Forecast", "Weather", new { CountryName = location.CountryName, AdminName1 = location.AdminName1, GeoName = location.GeoName, GeonameId = location.GeonameId, LocationId = location.LocationId })">@location.GeoName, @location.AdminName1, @location.CountryName</a></li>
             }
         </ul>
     </div>  

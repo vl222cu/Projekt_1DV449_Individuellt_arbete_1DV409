@@ -53,7 +53,7 @@ namespace Weather.Domain
         public override IEnumerable<Forecast> GetForecast(Location location)
         {
             // Om forecast saknas eller om det är dags för uppdatering...
-            if (location.Forecasts.Count() == 0 || location.Forecasts.Any() || location.NextUpdate < DateTime.Now)
+            if (location.Forecasts.Count() == 0 || !location.Forecasts.Any() || location.NextUpdate < DateTime.Now)
             {
                 // ...tar bort gamla prognoser om det finns några...
                 foreach (var forecast in location.Forecasts.ToList())
