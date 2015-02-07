@@ -138,10 +138,12 @@
     <Content Include="Error404.html" />
     <Content Include="Error500.aspx" />
     <Content Include="Error500.html" />
+    <Content Include="Offline.html" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MyCustomJS\StatusCheck.js" />
     <Content Include="Scripts\MyCustomJS\StoredSearches.js" />
     <Content Include="Views\Shared\favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -175,6 +177,7 @@
     <Content Include="Views\Weather\Forecast.cshtml" />
     <Content Include="ViewModels\Weather.cshtml" />
     <Content Include="Views\Weather\LocationList.cshtml" />
+    <Content Include="weather.appcache" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Weather.Domain\Weather.Domain.csproj">
@@ -193,6 +196,8 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
