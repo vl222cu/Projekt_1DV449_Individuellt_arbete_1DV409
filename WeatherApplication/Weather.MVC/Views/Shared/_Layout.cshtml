@@ -12,6 +12,7 @@
         <div class="container">
             <div class="navbar-header">
                 @Html.ActionLink("WeatherApplication", "Index", "Weather", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
@@ -21,9 +22,12 @@
         </div>
         @RenderBody()
 
+        @if (Request.IsAuthenticated)
+        { 
         <footer>
             <p>&copy; @DateTime.Now.Year - <small>Weather forecast and weather icons are from yr.no, delivered by the Norwegian Meteorological Institute and the NRK, conditions and guidelines can be found at http://om.yr.no/verdata/  English explanation at http://om.yr.no/verdata/free-weather-data/ and locationsearch from Geonames.org.</small></p>
         </footer>
+        }
     </div>
 
     @Scripts.Render("~/bundles/jquery")

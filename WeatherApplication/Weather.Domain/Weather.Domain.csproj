@@ -85,7 +85,9 @@
     <Compile Include="Webservices\IWeatherWebservice.cs" />
     <Compile Include="Webservices\WeatherWebservice.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.Config">
       <SubType>Designer</SubType>
