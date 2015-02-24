@@ -36,7 +36,9 @@ namespace Weather.MVC
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication();
+            app.UseGoogleAuthentication(
+                clientId: "xxxx",
+                clientSecret: "xxxx");
         }
     }
 }

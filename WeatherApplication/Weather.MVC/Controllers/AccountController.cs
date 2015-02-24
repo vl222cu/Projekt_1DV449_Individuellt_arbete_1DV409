@@ -85,7 +85,7 @@ namespace Weather.MVC.Controllers
                 if (result.Succeeded)
                 {
                     await SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("LocationForm");
+                    return RedirectToAction("Index", "Weather");
                 }
                 else
                 {
@@ -292,6 +292,7 @@ namespace Weather.MVC.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut();
+            TempData["loggedout"] = "You have been successfully logged out.";
             return RedirectToAction("Index", "Weather");
         }
 
@@ -374,7 +375,7 @@ namespace Weather.MVC.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Weather");
             }
         }
 
@@ -407,5 +408,5 @@ namespace Weather.MVC.Controllers
             }
         }
         #endregion
-	}
+    }
 }
