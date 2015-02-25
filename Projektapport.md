@@ -71,7 +71,7 @@
 > givetvis två nya kurser och det gjorde att jag inte helt kunde lägga 100% på att färdigställa de krav som jag hade i min
 > planering. Hade gärna fortsatt att implementera localstorage för att få applikationen mer dynamisk vid offlineläge men
 > detta hann jag dessvärre inte med. Denna del vill jag självklart implementera men det får bli vid ett senare tillfälle när
-> jag får mer tid över. Jag skulle även vilja se över lite kod i min applikation då det finns bättre sätt att skriva de på. 
+> jag får mer tid över. Jag skulle även vilja se över lite kod i min applikation då det finns ett par TODOS där. 
 
 ## Risker med applikationen
 
