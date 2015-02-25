@@ -7,7 +7,7 @@
 
 ## Väderapplikationens arkitektur
 
-![Alt applikationsarkitektur](/Projekt_1DV449_Individuellt_arbete_1DV409/Img/img.jpg "Applikationens arkitektur")
+![Alt applikationsarkitektur](/Projekt_1DV449_Individuellt_arbete_1DV409/Img/arkitektur.png "Applikationens arkitektur")
 
 ## Serversida
 
