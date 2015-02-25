@@ -9,6 +9,7 @@
 
 ![Alt applikationsarkitektur](/Img/arkitektur.png "Applikationens arkitektur")
 
+
 ## Serversida
 
 > Webbapplikationen är skapad med ramverket Microsoft ASP.NET MVC 5 och progrmmeringsspråket C#. För persistant lagring av 
