@@ -7,6 +7,8 @@
 
 ## Väderapplikationens arkitektur
 
+![Alt applikationsarkitektur](/Projekt_1DV449_Individuellt_arbete_1DV409/Img/img.jpg "Applikationens arkitektur")
+
 ## Serversida
 
 > Webbapplikationen är skapad med ramverket Microsoft ASP.NET MVC 5 och progrmmeringsspråket C#. För persistant lagring av 
