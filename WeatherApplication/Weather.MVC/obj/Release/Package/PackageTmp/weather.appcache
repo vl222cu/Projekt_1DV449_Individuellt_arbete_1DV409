@@ -1,0 +1,13 @@
+﻿CACHE MANIFEST 
+# version 1
+CACHE:
+/Content/bootstrap.min.css 
+/Content/Site.css 
+/Scripts/jquery-1.10.2.min.js 
+/Scripts/jquery.validate.unobtrusive.min.js 
+/Scripts/jquery.validate.min.js 
+/Scripts/bootstrap.min.js 
+NETWORK: 
+* 
+FALLBACK: 
+/ /Offline.html

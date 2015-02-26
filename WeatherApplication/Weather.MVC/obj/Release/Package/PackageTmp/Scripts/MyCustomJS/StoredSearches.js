@@ -9,10 +9,10 @@
     }
 
     function showSearch() {
-        var id = $('#localStorageDiv').val();
+        var id = $('.cityList').val();
 
         if (id != null) {
-            var city = $('#city').val();
+            var cityName = $('#city').val();
             var root = location.protocol + '//' + location.host;
 
             var search = '<a href="' + root + '/Location/' + id + '">' + city + '</a>';
@@ -34,7 +34,7 @@
             var root = location.protocol + '//' + location.host;
             $('.oldSearchesBox').append('<ul class="listOfSearchesUL"></ul>');
             for (var index in storedSearch) {
-                if (typeof (storedSearch[(storedSearch.length - 1) - index]) != "undefined") { // Konstiga undefined-objekt har dykt upp, måste skydda mig!
+                if (typeof (storedSearch[(storedSearch.length - 1) - index]) != "undefined") { 
                     $(".listOfSearchesUL").append('<li>' + storedSearch[(storedSearch.length - 1) - index] + '</li>');
                 }
             }
@@ -42,9 +42,11 @@
         }
     }
 
+
+
     function addSearch(search) {
 
-        // Hämtar ut innehållet i local storage variabeln favorites
+        // Hämtar ut innehållet i local storage variabeln 
         var storedData = localStorage.getItem("searches");
         var storedSearch = JSON.parse(storedData);
 

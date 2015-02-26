@@ -37,8 +37,8 @@ namespace Weather.MVC
             //   appSecret: "");
 
             app.UseGoogleAuthentication(
-                clientId: "xxx",
-                clientSecret: "xxx");
+                clientId: "327867939996-m4qt9dkrhf75oc1nf9pr9fep7piq6n0k.apps.googleusercontent.com",
+                clientSecret: "nZSLTxuY36vJ8RfMoqnA-sgb");
         }
     }
 }

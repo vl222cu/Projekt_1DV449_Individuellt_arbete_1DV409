@@ -6,11 +6,12 @@
     string nameOfDay = "";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <div class="search">
     @Html.ActionLink("New Search", "Index")
 </div>
 
-
+<!--// TODO: Fulkod! Omstrukturera koden!-->
 @if (Model != null && Model.HasForecasts)
 {
    <h2> Weather Forecast for @Model.Name </h2>

@@ -8,22 +8,32 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+    <iframe id='manifest_iframe_hack'
+            style='display: none;'
+            src='~/temporary_manifest_hack.html'></iframe> 
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 @Html.ActionLink("WeatherApplication", "Index", "Weather", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
     <div class="container body-content">
         <div>
             <span id="detectionSpan"></span>
+            @Html.Partial("_Message")
         </div>
         @RenderBody()
 
+        @if (Request.IsAuthenticated)
+        { 
         <footer>
-            <p>&copy; @DateTime.Now.Year - <small>Weather forecast and weather icons are from yr.no, delivered by the Norwegian Meteorological Institute and the NRK, conditions and guidelines can be found at http://om.yr.no/verdata/  English explanation at http://om.yr.no/verdata/free-weather-data/ and locationsearch from Geonames.org.</small></p>
+            <p>&copy; @DateTime.Now.Year - WeatherApplication created by Vivi Lam</p>
+            <p><small>Weather forecast and icons are delivered by www.yr.no and locationsearch by Geonames.org.</small></p>
         </footer>
+        }
     </div>
 
     @Scripts.Render("~/bundles/jquery")
