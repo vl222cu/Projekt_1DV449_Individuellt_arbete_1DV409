@@ -11,3 +11,11 @@ Projekt_1DV449_Individuellt_arbete_1DV409
 
 > [Projektbeskrivning](https://coursepress.lnu.se/kurs/webbteknik-ii/projektbeskrivning "VäderApplikation")
 
+> Länk till muntliga redovisningen: 
+
+> [Filmklipp för väderapplikationen](https://www.youtube.com/watch?v=a7VIzrGJP48&feature=youtu.be&hd=1 "WeatherApp")
+
+> Länk till projektrapporten: 
+
+> [Projektrapport](/projektrapport.md)
+
