@@ -65,7 +65,11 @@
 ## Offline-first
 
 > När det gäller offline-first har jag implementerat application cache där manifestfilen hanterar vilka dokument som ska
-> cachas. På detta sätt kan en användare surfa runt på besökta sidor även i offlineläge. 
+> cachas. På detta sätt kan en användare surfa runt på besökta sidor även i offlineläge. Dock skapade själva cachningen en 
+> del problem då den cachar alla sidor i applikationen, även den inloggade sidan, i och med att jag använder mig av samma 
+> layoutsida för alla mina vyer. Detta gjorde att man kom till den inloggade sidan utan att behöva logga in. Löste problemet > genom att använda mig av iFrame i layoutsidan som länkar till en tom htmlsida där jag lagt själva manifestfilen istället.
+> Lösningen hittade jag på följande sida: 
+> http://en.efreedom.net/Question/1-9287044/HTML5-Application-Cache-Manifest-Caching-Everything
 
 ## Reflektion kring projektet
 
