@@ -43,6 +43,10 @@
 > Valideringen sker med hjälp av data annotation ihop med jQuery och jQuery Validation. Valideringsmeddelanden visas 
 > och döljs dynamiskt och själva formuläret postas inte förrän fälten klarar valideringen på klienten. 
 
+> Felhanteringen är omhändertagen i WeatherControllern där try-catch-satser hanterar alla fel som kan uppkomma igenom hela 
+> applikationen med hjälp av egenskapen InnerException. Denna egenskap innehåller en referens till det ursprungliga felet 
+> och på detta sätt kan den t ex göra användaren medveten om något av APIerna, som används i applikationen, ligger nere.
+
 ## Säkerhet och prestandaoptimering
 
 > Gällande säkerheten av applikationen har jag använt mig av ASP.NET Identity för att autentisera en användare.
