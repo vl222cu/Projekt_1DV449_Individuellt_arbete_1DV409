@@ -292,7 +292,6 @@ namespace Weather.MVC.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut();
-            TempData["loggedout"] = "You have been successfully logged out.";
             return RedirectToAction("Index", "Weather");
         }
 

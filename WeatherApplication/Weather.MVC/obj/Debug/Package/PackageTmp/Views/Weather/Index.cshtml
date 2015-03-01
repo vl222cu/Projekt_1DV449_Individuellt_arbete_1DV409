@@ -1,0 +1,17 @@
+﻿@model Weather.MVC.ViewModels.WeatherIndexViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Request.IsAuthenticated)
+{
+    <h3>Check out the weather around the world!</h3>
+    @Html.Partial("~/Views/Weather/LocationForm.cshtml");
+}
+else
+{
+    <img src="~/Content/Images/Weather.png" />
+}
+
+
